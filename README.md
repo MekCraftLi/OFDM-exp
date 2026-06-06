@@ -1,4 +1,8 @@
-# work3 OFDM Experiment
+# OFDM-exp
+
+OFDM课程实验。
+
+## work3 OFDM Experiment
 
 This folder is the new development workspace for the OFDM MATLAB experiment.
 
@@ -31,20 +35,11 @@ work3/
 - Type names use UpperCamelCase, such as `OfdmParams`.
 - Functions, variables, and parameter properties use snake_case.
 
-## First Development Step
-
-Start with packet detection:
+## Run
 
 ```matlab
 cd('D:/Program/ofdm-exp/work3')
 main_01_module_sims
+main_02_integration_sims
+main_03_complete_ofdm
 ```
-
-Then implement modules in this order:
-
-1. `rx/packet_detect.m`
-2. `rx/frequency_sync.m`
-3. `rx/fine_time_sync.m`
-4. `rx/channel_estimation.m`
-5. `rx/channel_equalization.m`
-6. `rx/phase_compensation.m`
