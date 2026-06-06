@@ -6,7 +6,6 @@ addpath(fullfile(pwd, 'rx'));
 rng(1);
 
 params = ofdm_config();
-[shortTrain, longTrain, params] = gen_train(params);
+[short_train, long_train, params] = gen_train(params);
 
-resultDir = fullfile(pwd, 'results', 'integration');
-
+result_dir = fullfile(pwd, 'results', 'integration');
