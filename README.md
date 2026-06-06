@@ -25,9 +25,11 @@ work3/
 
 - Main scripts control experiments, SNR loops, plots, and saved results.
 - Functions implement one algorithm each.
-- Shared constants are stored in `params` from `common/ofdm_config.m`.
+- Shared constants are stored in an `OfdmParams` object from `common/ofdm_config.m`.
 - Do not use `global`.
 - Do not save figures or data inside algorithm functions.
+- Type names use UpperCamelCase, such as `OfdmParams`.
+- Functions, variables, and parameter properties use snake_case.
 
 ## First Development Step
 
@@ -46,4 +48,3 @@ Then implement modules in this order:
 4. `rx/channel_estimation.m`
 5. `rx/channel_equalization.m`
 6. `rx/phase_compensation.m`
-

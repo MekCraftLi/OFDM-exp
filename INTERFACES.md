@@ -2,7 +2,7 @@
 
 ## Common Parameters
 
-All modules receive a `params` structure created by:
+All modules receive an `OfdmParams` object created by:
 
 ```matlab
 params = ofdm_config();
@@ -11,17 +11,17 @@ params = ofdm_config();
 Important fields:
 
 ```matlab
-params.fftLen
-params.cpLen
-params.blockLen
-params.sampleRate
-params.cfoHz
-params.usedSubcIdx
-params.dataSubcIdx
-params.pilotSubcIdx
+params.fft_len
+params.cp_len
+params.block_len
+params.sample_rate
+params.cfo_hz
+params.used_subc_idx
+params.data_subc_idx
+params.pilot_subc_idx
 params.reorder
 params.threshold
-params.searchWin
+params.search_win
 ```
 
 ## Module Interfaces
@@ -29,49 +29,49 @@ params.searchWin
 Packet detection:
 
 ```matlab
-[startIdx, metric] = packet_detect(rxSignal, params)
+[start_idx, metric] = packet_detect(rx_signal, params)
 ```
 
 Frequency synchronization:
 
 ```matlab
-[freqEst, correctedSignal] = frequency_sync(rxSignal, params)
+[freq_est, corrected_signal] = frequency_sync(rx_signal, params)
 ```
 
 Fine timing synchronization:
 
 ```matlab
-[fineIdx, metric] = fine_time_sync(rxSignal, longTrainSymbol, params)
+[fine_idx, metric] = fine_time_sync(rx_signal, long_train_symbol, params)
 ```
 
 Channel estimation:
 
 ```matlab
-[channelEst, info] = channel_estimation(rxLongTraining, params)
+[channel_est, info] = channel_estimation(rx_long_training, params)
 ```
 
 Channel equalization:
 
 ```matlab
-eqData = channel_equalization(freqData, channelEst, params)
+eq_data = channel_equalization(freq_data, channel_est, params)
 ```
 
 Phase compensation:
 
 ```matlab
-compData = phase_compensation(eqData, pilotSyms, params)
+comp_data = phase_compensation(eq_data, pilot_syms, params)
 ```
 
 Complete transmitter:
 
 ```matlab
-[txSignal, txInfo] = tx_ofdm(infoBits, params)
+[tx_signal, tx_info] = tx_ofdm(info_bits, params)
 ```
 
 Complete receiver:
 
 ```matlab
-[rxBits, rxInfo] = rx_ofdm(rxSignal, params)
+[rx_bits, rx_info] = rx_ofdm(rx_signal, params)
 ```
 
 ## Resource Management
@@ -82,3 +82,10 @@ Complete receiver:
 - Received signals are column vectors.
 - Frequency-domain OFDM data uses columns as OFDM symbols.
 
+## Naming Rules
+
+- Type names use UpperCamelCase: `OfdmParams`.
+- Function names use snake_case: `packet_detect`.
+- Local variables use snake_case: `search_win`.
+- `OfdmParams` properties use snake_case: `packet_delay_len`.
+- MATLAB built-in APIs keep their official names, for example `mustBeInteger`.
