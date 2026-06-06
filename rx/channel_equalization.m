@@ -5,5 +5,9 @@ arguments
     params (1,1) OfdmParams
 end
 
-error('channel_equalization:NotImplemented', 'Implement channel equalization after channel estimation.');
+data_channel = channel_est(params.data_subc_patt);
+channel_mat = repmat(data_channel, 1, size(freq_data, 2));
+power_mat = repmat(abs(data_channel).^2 + eps, 1, size(freq_data, 2));
+
+eq_data = freq_data .* conj(channel_mat) ./ power_mat;
 end
