@@ -1,0 +1,26 @@
+# MATLAB temporary files
+*.asv
+*.fig
+*.mat
+*.mex*
+*.slxc
+*.m~
+
+# MATLAB generated folders
+slprj/
+codegen/
+
+# Simulation outputs
+results/module/*
+results/integration/*
+results/complete/*
+!results/module/.gitkeep
+!results/integration/.gitkeep
+!results/complete/.gitkeep
+
+# Editor and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
