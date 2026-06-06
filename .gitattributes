@@ -1,0 +1,15 @@
+*.m text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.csv text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.fig binary
+*.mat binary
+*.pdf binary
+*.rar binary
+
